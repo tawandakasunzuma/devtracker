@@ -4,6 +4,7 @@ const roadmapData = [
         sectionName: "HTML",
         listOfTopics: [
             {
+                id: "html-basics",
                 title: "HTML Basics",
                 description: "Defines the structure and content of web pages.",
                 checked: false,
@@ -15,18 +16,21 @@ const roadmapData = [
         sectionName: "CSS",
         listOfTopics: [
             {
+                id: "css-fundamentals",
                 title: "CSS Fundamentals",
                 description: "Styles elements using color, layout, and spacing rules.",
                 checked: false,
                 notes: "" 
             },
             {
+                id: "flexbox-and-grid",
                 title: "Flexbox & Grid",
                 description: "Layout systems for aligning and organizing page elements.",
                 checked: false,
                 notes: ""
             },
             {
+                id: "responsive-design",
                 title: "Responsive Design",
                 description: "Ensures websites look good on all screen sizes.",
                 checked: false,
@@ -38,24 +42,28 @@ const roadmapData = [
         sectionName: "JavaScript",
         listOfTopics: [
             {
+                id: "javascript-basics",
                 title: "JavaScript Basics",
                 description: "Core language for adding behavior and interactivity to websites.",
                 checked: false,
                 notes: ""
             },
             {
+                id: "dom-manipulation",
                 title: "DOM Manipulation",
                 description: "Accesses and updates page elements dynamically with JavaScript.",
                 checked: false,
                 notes: ""
             },
             {
+                id: "using-fetch-api",
                 title: "Using Fetch API",
                 description: "Retrieves data from servers or APIs using JavaScript.",
                 checked: false,
                 notes: ""
             },
             {
+                id: "es6+-features",
                 title: "ES6+ Features",
                 description: "Modern JavaScript improvements like arrow functions and let/const.",
                 checked: false,
@@ -67,12 +75,14 @@ const roadmapData = [
         sectionName: "Frameworks & Tooling",
         listOfTopics: [
             {
+                id: "tooling",
                 title: "Tooling",
                 description: "Tools for dependency management and efficient development workflows.",
                 checked: false,
                 notes: ""
             },
             {
+                id: "basic-react",
                 title: "Basic React",
                 description: "JavaScript library for building fast, component-based user interfaces.",
                 checked: false,
