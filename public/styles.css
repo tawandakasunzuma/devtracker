@@ -6,16 +6,73 @@
     padding: 0;
 }
 
+body {
+    text-transform: uppercase;
+}
+
 #header {
-    position: fixed;
-    top: 0;
     width: 100%;
     background-color: gray;
     color: white;
-    padding: 2rem;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+#app-name {
+    font-size: 4rem;
+    font-weight: bold;
 }
 
 #content {
-    margin-top: 6rem;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+ 
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.topic-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: lightgrey;
     padding: 2rem;
+    border-radius: 2rem;
+    width: 300px;
+}
+
+.note-icon,
+.checkbox {
+    cursor: pointer;
+}
+
+.topic-name {
+    font-weight: bold;
+}
+
+.progress {
+    color: gray;
+    font-weight: bold;
 }
