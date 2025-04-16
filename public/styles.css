@@ -23,6 +23,14 @@ body {
     font-weight: bold;
 }
 
+#progress-bar {
+    height: 2rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+    border: 2px solid white;
+    background-color: gray;
+}
+
 #content {
     padding: 4rem 2rem;
     display: flex;
