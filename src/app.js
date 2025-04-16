@@ -175,5 +175,6 @@ function calculateSectionProgress (sectionIndex) {
     // Update progress bar
     const progressBar = document.getElementById("progress-bar");
     progressBar.style.width = `${competedPercentage}%`;
-    progressBar.style.backgroundColor = "white";
+    progressBar.style.backgroundColor = "black";
+    progressBar.style.animation = "none";
 }
