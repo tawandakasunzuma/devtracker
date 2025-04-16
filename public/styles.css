@@ -1,0 +1,21 @@
+/* Reset styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    padding: 2rem;
+}
+
+#content {
+    margin-top: 6rem;
+    padding: 2rem;
+}
