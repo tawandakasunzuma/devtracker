@@ -1,0 +1,110 @@
+[
+    {
+        "id": "frontend",
+        "title": "Frontend",
+        "topics": [
+            {
+                "id": "html-basics",
+                "title": "HTML Basics",
+                "done": false,
+                "notes": ""
+            },
+            {
+                "id": "css-fundamentals",
+                "title": "CSS Fundamentals",
+                "done": false,
+                "notes": ""
+            },
+            {
+              "id": "javascript-intro",
+              "title": "JavaScript Introduction",
+              "done": false,
+              "notes": ""
+            },
+            {
+                "id": "dom-manipulation",
+                "title": "DOM Manipulation",
+                "done": false,
+                "notes": ""
+            },
+            {
+              "id": "frontend-frameworks",
+              "title": "Frontend Frameworks",
+              "done": false,
+              "notes": ""
+            }
+        ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend",
+      "topics": [
+        {
+          "id": "server-basics",
+          "title": "Server Basics",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "api-design",
+          "title": "API Design",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "database-integration",
+          "title": "Database Integration",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "authentication",
+          "title": "Authentication",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "backend-frameworks",
+          "title": "Backend Frameworks",
+          "done": false,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "devops",
+      "title": "DevOps",
+      "topics": [
+        {
+          "id": "version-control",
+          "title": "Version Control (Git)",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "ci-cd",
+          "title": "CI/CD Pipelines",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "containerization",
+          "title": "Containerization (Docker)",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "cloud-providers",
+          "title": "Cloud Providers (AWS, Azure)",
+          "done": false,
+          "notes": ""
+        },
+        {
+          "id": "monitoring",
+          "title": "Monitoring & Logging",
+          "done": false,
+          "notes": ""
+        }
+      ]
+    }
+]
