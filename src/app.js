@@ -121,6 +121,16 @@ for (let i = 0; i < roadmapData.length; i++) {
         const checkBox = document.createElement("input");
         checkBox.classList.add("checkbox");
         checkBox.type = "checkbox";
+        checkBox.checked = topic.checked;
+
+            // Checkbox event listener
+            checkBox.addEventListener("change", (event) => {
+                if (event.target.checked) {
+                    topic.checked = true;
+                } else {
+                    topic.checked = false;
+                }
+            });
         
         // Create topic title
         const topicTitle = document.createElement("p");
@@ -152,4 +162,3 @@ for (let i = 0; i < roadmapData.length; i++) {
     // Append into content on DOM
     content.append(section)
 }
-
