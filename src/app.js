@@ -122,7 +122,7 @@ for (let i = 0; i < roadmapData.length; i++) {
         checkBox.classList.add("checkbox");
         checkBox.type = "checkbox";
         checkBox.checked = topic.checked;
-
+        
             // Checkbox event listener
             checkBox.addEventListener("change", (event) => {
                 if (event.target.checked) {
@@ -130,8 +130,9 @@ for (let i = 0; i < roadmapData.length; i++) {
                 } else {
                     topic.checked = false;
                 }
+                calculateSectionProgress (i);
             });
-        
+
         // Create topic title
         const topicTitle = document.createElement("p");
         topicTitle.classList.add("topic-name");
@@ -161,4 +162,18 @@ for (let i = 0; i < roadmapData.length; i++) {
 
     // Append into content on DOM
     content.append(section)
+}
+
+// Progress function
+
+function calculateSectionProgress (sectionIndex) {
+    // Calculate percentage
+    const totalTopics = roadmapData.reduce((acc, section) => acc + section.listOfTopics.length, 0);
+    const topicsCompleted = roadmapData.reduce((acc, section) => acc + section.listOfTopics.filter(t => t.checked).length, 0);
+    const competedPercentage = Math.round((topicsCompleted / totalTopics) * 100);
+    
+    // Update progress bar
+    const progressBar = document.getElementById("progress-bar");
+    progressBar.style.width = `${competedPercentage}%`;
+    progressBar.style.backgroundColor = "white";
 }
