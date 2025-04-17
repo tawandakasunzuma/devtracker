@@ -130,6 +130,11 @@ body {
 .section-heading {
     font-size: var(--large-font-size);
     letter-spacing: 1px;
+    transition: all 1200ms ease;
+}
+
+.section-heading:hover {
+    transform: scale(0.9);
 }
 
 .card-list {
