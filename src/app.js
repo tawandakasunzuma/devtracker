@@ -1,5 +1,5 @@
 // Roadmap data
-const roadmapData = [
+let roadmapData = [
     {
         sectionName: "HTML",
         listOfTopics: [
@@ -94,6 +94,21 @@ const roadmapData = [
 
 // Content container
 const content = document.getElementById("content");
+
+// Read from localStorage
+const saved = localStorage.getItem("devTrackerData");
+
+// Check if null
+if (saved) {
+    try {
+        // Load save roadmapData from localStorage
+        roadmapData = JSON.parse(saved);
+    }
+    catch (err) {
+        // Fallback to default if not found
+        console.error("Failed to parse saved roadmap data:", err);
+    }
+}
 
 // Loop through roadmap data and create different sections
 for (let i = 0; i < roadmapData.length; i++) {
