@@ -31,11 +31,19 @@
     --small-border-radius: 1rem;
     --medium-border-radius: 2rem;
     /* Colors*/
-    --background-color: white;
-    --primary-color: black;
-    --secondary-color: grey;
-    --tertiary-color: whitesmoke;
+    --background-color: #F9FAFB;
+    --primary-color: #111827;
+    --secondary-color: #6B7280;
+    --tertiary-color: #E5E7EB;
+}
 
+/* Dark theme */
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --primary-color:#E0E0E0;
+    --secondary-color: #BBBBBB;
+    --tertiary-color: #2A2A2A;
 }
 
 /* Body */
@@ -62,6 +70,7 @@ body {
     font-weight: bold;
     font-size: var(--xl-font-size);
     display: flex;
+    margin-bottom: var(--big-margin);
 }
 
 /* Header - Progress */
@@ -83,7 +92,7 @@ button {
     box-shadow: 0 0 4px var(--secondary-color);
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
-    width: 150px;
+    width: 175px;
     margin: 0 auto;
     cursor: pointer;
     transition: all 600ms ease;
@@ -105,6 +114,7 @@ button:hover {
     border-radius: var(--small-border-radius);
     background-color: var(--primary-color);
     position: sticky;
+    background-color: var(--primary-color);
     /*animation: pan 6s infinite ease-in-out alternate;*/
 }
 
@@ -127,7 +137,7 @@ button:hover {
     margin-top: var(--medium-margin);
     width: 50%;
     line-height: 1.5;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-transform: none;
 }
 
@@ -199,6 +209,15 @@ button:hover {
     color: var(--secondary-color);
 }
 
+.note-icon {
+    font-size: var(--small-font-size);
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: var(--background-color);
+    padding: var(--xs-padding);
+    border-radius: var(--small-border-radius);
+}
+
 /* Note popup */
 
 #note-popup {
@@ -247,8 +266,8 @@ button:hover {
 #footer {
     padding: var(--medium-padding);
     text-align: center;
-    background-color: var(--secondary-color);
-    color: var(--background-color);
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
 }
 
 /* Overlay */
