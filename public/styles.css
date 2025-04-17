@@ -21,6 +21,7 @@
     --big-padding: 4rem;
     --medium-padding: 2rem;
     --small-padding: 1rem;
+    --xs-padding: 0.5rem;
     /* Fonts */
     --xl-font-size: 10rem;
     --large-font-size: 2rem;
@@ -103,6 +104,7 @@ button:hover {
     width: 1rem;
     border-radius: var(--small-border-radius);
     background-color: var(--primary-color);
+    position: sticky;
     /*animation: pan 6s infinite ease-in-out alternate;*/
 }
 
@@ -151,11 +153,6 @@ button:hover {
 .section-heading {
     font-size: var(--large-font-size);
     letter-spacing: 1px;
-    transition: all 1200ms ease;
-}
-
-.section-heading:hover {
-    transform: scale(0.9);
 }
 
 .card-list {
@@ -195,12 +192,54 @@ button:hover {
     cursor: pointer;
 }
 
-.description,
-.progress {
+.description {
     font-size: var(--small-font-size);
     text-align: center;
     letter-spacing: 1px;
     color: var(--secondary-color);
+}
+
+/*Note popup*/
+
+#note-popup {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+    padding: var(--medium-padding) var(--small-padding);
+    border-radius: var(--medium-border-radius);
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 1%;
+    box-shadow: 0 0 20px var(--secondary-color);
+    opacity: 0.875;
+    display: none;
+}
+
+#note-title {
+    color: var(--background-color);
+    letter-spacing: 4px;
+    font-weight: normal;
+}
+
+#note-text {
+    padding: var(--xs-padding);
+    height: 10rem;
+}
+
+#save-note-btn,
+#close-note-btn {
+    padding: var(--xs-padding);
+    box-shadow: 0 0 4px var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+#save-note-btn:hover,
+#close-note-btn:hover {
+    box-shadow: 0 0 8px var(--tertiary-color);
+    color: var(--background-color);
+    transform: translateX(1px) translateY(-2px);
 }
 
 /* Footer */
