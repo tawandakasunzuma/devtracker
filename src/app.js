@@ -95,10 +95,10 @@ let roadmapData = [
 // Content container
 const content = document.getElementById("content");
 
-// Read from localStorage
+// Read from localStorage Data
 const saved = localStorage.getItem("devTrackerData");
 
-// Check if null
+// Check if data null
 if (saved) {
     try {
         // Load save roadmapData from localStorage
@@ -109,6 +109,37 @@ if (saved) {
         console.error("Failed to parse saved roadmap data:", err);
     }
 }
+
+// Read from localStorage Theme
+const savedTheme = localStorage.getItem("theme")
+
+// Set theme
+if (savedTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+} else {
+    document.documentElement.setAttribute("data-theme", "light");
+}
+
+// Change theme button
+const themeButton = document.getElementById("change-theme");
+
+// Initialize button label on page load
+themeButton.textContent = savedTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+
+// Theme button event listener
+themeButton.addEventListener("click", () => {
+    // Read current data theme on html
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute("data-theme");
+    // Compute the new mode
+    const nextMode = currentTheme === "dark" ? "light" : "dark";
+    // Update the attribute
+    html.setAttribute("data-theme", nextMode);
+    // Save to localStorage
+    localStorage.setItem("theme", nextMode);
+    // Change Text
+    themeButton.textContent = nextMode === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"; 
+});
 
 // Loop through roadmap data and create different sections
 for (let i = 0; i < roadmapData.length; i++) {
@@ -221,12 +252,20 @@ function calculateSectionProgress () {
     const totalTopics = roadmapData.reduce((acc, section) => acc + section.listOfTopics.length, 0);
     const topicsCompleted = roadmapData.reduce((acc, section) => acc + section.listOfTopics.filter(t => t.checked).length, 0);
     const competedPercentage = Math.round((topicsCompleted / totalTopics) * 100);
-    
+
     // Update progress bar
     const progressBar = document.getElementById("progress-bar");
     progressBar.style.width = `${competedPercentage}%`;
-    progressBar.style.backgroundColor = "black";
     progressBar.style.animation = "none";
+
+    // Update color
+    if (competedPercentage <= 25) {
+        progressBar.style.backgroundColor = "red";
+    } else if (competedPercentage === 100 ) {
+        progressBar.style.backgroundColor = "green";
+    } else {
+        progressBar.style.backgroundColor = "var(--primary-color)"
+    }
 }
 
 // Save progress function
