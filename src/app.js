@@ -166,6 +166,40 @@ for (let i = 0; i < roadmapData.length; i++) {
         noteIcon.classList.add("note-icon");
         noteIcon.innerHTML = "📝";
 
+        // Click event listener on note icon
+        noteIcon.addEventListener("click", () => {
+            // Declare values
+            const notePopup = document.getElementById("note-popup");
+            const noteTitle = document.getElementById("note-title");
+            const noteText = document.getElementById("note-text");
+            const overlay = document.getElementById("overlay");
+            // Turn on displays
+            notePopup.style.display = "flex";
+            overlay.style.display = "block";
+            noteTitle.innerHTML = topic.title;
+            noteText.innerHTML = topic.notes;
+            // Create save btn and close btn
+            const saveBtn = document.getElementById("save-note-btn");
+            const closeBtn = document.getElementById("close-note-btn");
+            //Save btn event listener
+            saveBtn.addEventListener("click", () => {
+                // Save progress to localStorage
+                noteIcon.innerHTML = noteText.value;
+                topic.notes = noteText.value;
+                saveProgress ();
+                // Hide popup
+                notePopup.style.display = "none";
+                // Hide overlay
+                overlay.style.display = "none";
+            })
+            // Delete btn event listener
+            closeBtn.addEventListener("click", () => {
+                notePopup.style.display = "none";
+                // Hide overlay
+                overlay.style.display = "none";
+            })
+        })
+
         // Append into topic card
         topicCard.append(checkBox,topicTitle,description,noteIcon);
 
