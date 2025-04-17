@@ -23,7 +23,7 @@
     --small-padding: 1rem;
     --xs-padding: 0.5rem;
     /* Fonts */
-    --xl-font-size: 10rem;
+    --xl-font-size: 4rem;
     --large-font-size: 2rem;
     --normal-font-size: 1rem;
     --small-font-size: 0.75rem;
@@ -68,7 +68,7 @@ body {
 
 #app-name {
     font-weight: bold;
-    font-size: var(--xl-font-size);
+    font-size: 8rem;
     display: flex;
     margin-bottom: var(--big-margin);
 }
@@ -92,7 +92,7 @@ button {
     box-shadow: 0 0 4px var(--secondary-color);
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
-    width: 175px;
+    width: 10rem;
     margin: 0 auto;
     cursor: pointer;
     transition: all 600ms ease;
@@ -112,8 +112,6 @@ button:hover {
     height: 1rem;
     width: 1rem;
     border-radius: var(--small-border-radius);
-    background-color: var(--primary-color);
-    position: sticky;
     background-color: var(--primary-color);
     /*animation: pan 6s infinite ease-in-out alternate;*/
 }
@@ -252,6 +250,7 @@ button:hover {
     padding: var(--xs-padding);
     box-shadow: 0 0 4px var(--secondary-color);
     background-color: var(--primary-color);
+    color: var(--tertiary-color);
 }
 
 #save-note-btn:hover,
@@ -266,8 +265,8 @@ button:hover {
 #footer {
     padding: var(--medium-padding);
     text-align: center;
-    background-color: var(--primary-color);
-    color: var(--tertiary-color);
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
 }
 
 /* Overlay */
@@ -284,4 +283,42 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
     cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (max-width: 480px) {
+    html {
+        font-size: 10px;
+    }
+    #app-name {
+        font-size: var(--xl-font-size);
+    }
+    #progress-section {
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+    #app-name {
+        font-size: var(--xl-font-size);
+    }
+    #progress-section {
+        width: 75%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+    #app-name {
+        font-size: 6rem;
+    }
+    #progress-section {
+        width: 50%;
+    }
 }
