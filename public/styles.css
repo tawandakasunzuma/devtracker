@@ -69,8 +69,29 @@ body {
     width: 25%;
     display: flex;
     flex-direction: column;
-    gap: var(--small-gap);
+    gap: var(--medium-gap);
     font-size: var(--small-font-size);
+}
+
+button {
+    font-size: var(--small-font-size);
+    font-weight: bold;
+    padding: var(--small-padding);
+    border-radius: var(--medium-border-radius);
+    border: none;
+    box-shadow: 0 0 4px var(--secondary-color);
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    width: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 600ms ease;
+}
+
+button:hover {
+    box-shadow: 2px 2px 2px var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateX(2px) translateY(-4px);
 }
 
 #progress-bar-heading {
