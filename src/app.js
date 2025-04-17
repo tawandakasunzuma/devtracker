@@ -122,7 +122,7 @@ for (let i = 0; i < roadmapData.length; i++) {
     sectionHeading.innerHTML = roadmapData[i].sectionName;
     // Create card list
     const cardList = document.createElement("div");
-    cardList.classList.add("card-list")
+    cardList.classList.add("card-list");
 
     // Append heading and card list into section
     section.append(sectionHeading,cardList);
@@ -145,7 +145,10 @@ for (let i = 0; i < roadmapData.length; i++) {
                 } else {
                     topic.checked = false;
                 }
-                calculateSectionProgress (i);
+                // Calculate percentage of progress
+                calculateSectionProgress ();
+                // Save progress to localStorage
+                saveProgress ();
             });
 
         // Create topic title
@@ -155,7 +158,7 @@ for (let i = 0; i < roadmapData.length; i++) {
 
         // Create description
         const description = document.createElement("p");
-        description.classList.add("description"),
+        description.classList.add("description");
         description.innerHTML = topic.description;
 
         // Create note icon
@@ -163,13 +166,8 @@ for (let i = 0; i < roadmapData.length; i++) {
         noteIcon.classList.add("note-icon");
         noteIcon.innerHTML = "📝";
 
-        // Create progress percentage
-        const progressPercentage = document.createElement("span");
-        progressPercentage.classList.add("progress");
-        progressPercentage.innerHTML = "0%";
-
         // Append into topic card
-        topicCard.append(checkBox,topicTitle,description,noteIcon,progressPercentage);
+        topicCard.append(checkBox,topicTitle,description,noteIcon);
 
         // Append topic card into section
         cardList.append(topicCard);
@@ -179,9 +177,12 @@ for (let i = 0; i < roadmapData.length; i++) {
     content.append(section)
 }
 
+// Reload 
+calculateSectionProgress ();
+
 // Progress function
 
-function calculateSectionProgress (sectionIndex) {
+function calculateSectionProgress () {
     // Calculate percentage
     const totalTopics = roadmapData.reduce((acc, section) => acc + section.listOfTopics.length, 0);
     const topicsCompleted = roadmapData.reduce((acc, section) => acc + section.listOfTopics.filter(t => t.checked).length, 0);
@@ -193,3 +194,17 @@ function calculateSectionProgress (sectionIndex) {
     progressBar.style.backgroundColor = "black";
     progressBar.style.animation = "none";
 }
+
+// Save progress function
+
+function saveProgress () {
+    localStorage.setItem("devTrackerData", JSON.stringify(roadmapData))
+}
+
+// Clear progress
+
+const clearProgress = document.getElementById("clear-storage");
+clearProgress.addEventListener("click", () => {
+    localStorage.removeItem("devTrackerData");
+    location.reload();
+})
