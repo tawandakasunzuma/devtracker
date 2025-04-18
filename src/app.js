@@ -242,6 +242,40 @@ for (let i = 0; i < roadmapData.length; i++) {
     content.append(section)
 }
 
+// Search event listener
+const searchInput = document.getElementById("search-input");
+const topicCards = document.querySelectorAll(".topic-card");
+
+searchInput.addEventListener("input", () => {
+    const filterText = searchInput.value.trim().toLowerCase();
+    topicCards.forEach(card => {
+        const titleName = card.querySelector(".topic-name");
+        const cardTitle = titleName.textContent.toLowerCase();
+        if (cardTitle.includes(filterText)) {
+            card.style.display = "";
+            setTimeout(() => {
+                card.style.opacity = "1";
+            }, 300)
+        } else {
+            card.style.opacity = "0";
+            setTimeout(() => {
+                card.style.display = "none";
+            }, 300)
+        }
+    })
+});
+
+// Clear search event listener
+const clearSearch = document.getElementById("clear-search");
+clearSearch.addEventListener("click", () => {
+    searchInput.value = "";
+    topicCards.forEach(topic => {
+        topic.style.display = "";
+        topic.style.opacity = "1";
+    });
+    searchInput.focus();
+})
+
 // Reload 
 calculateSectionProgress ();
 
