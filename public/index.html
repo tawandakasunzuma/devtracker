@@ -13,7 +13,9 @@
       <div id="progress-section">
         <button id="change-theme">Change Theme</button>
         <p id="progress-bar-heading">Progress</p>
-        <div id="progress-bar"></div>
+        <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
         <button id="clear-storage">Reset Progress</button>
       </div>
       <p id="app-description">
@@ -22,6 +24,10 @@
         master HTML, CSS, JavaScript, and modern tools.
       </p>
     </header>
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Search topics..." />
+      <button id="clear-search" aria-label="Clear search">X</button>
+    </div>
     <main id="content"></main>
     <footer id="footer">
       <p>Copyright</p>
